@@ -10,7 +10,7 @@ pages:
     - mkdir .public
     - cp -r ./* .public 
     - rm -rf public
-    - mv .public public
+    - mv .public ./
   artifacts:
     paths:
       - public
