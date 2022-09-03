@@ -7,6 +7,7 @@
 pages:
   stage: deploy
   before_script:
+    - pkg install nodejs
     - npm i
     - npm run generate
   script:
