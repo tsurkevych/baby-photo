@@ -10,7 +10,7 @@
 		transition(name='header')
 			layout-waves(
 				v-if='wave'
-				:params='{color: "hsl(337, 100%, 89%)", index: 1, height: 120}'
+				:params='{color: "#e0cac6", index: 1, height: 120}'
 			)
 </template>
 
@@ -43,9 +43,10 @@ export default {
 <style lang="scss" module>
 .header {
 	position: sticky;
+	z-index: 10;
 	top: 0;
 	background: {
-		color: var(--main);
+		color: color.scale(map.get($colors, 'main'), $lightness: -10%);
 	}
 
 	.container {

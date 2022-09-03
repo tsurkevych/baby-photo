@@ -34,8 +34,13 @@ const config: NuxtConfig = () => {
 		router: {
 			middleware:   [ 'trailing-slash-redirect', 'user-agent' ]
 		},
+		plugins:      [
+			{
+				src:  '~/plugins/client.ts',
+				mode: 'client'
+			}
+		],
 		css:            [ 'assets/scss/style.scss' ],
-		plugins:      [],
 		components:     true,
 		buildModules:   [
 			'@nuxt/typescript-build',

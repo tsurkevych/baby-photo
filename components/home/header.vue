@@ -8,8 +8,8 @@
 					:class='$style.icon'
 				)
 			div(:class='$style.header__description')
-				p якісні фото
-				p на довгу пам'ять
+				p Справжні історії
+				p про щасливі моменти)
 </template>
 
 <script>
@@ -30,7 +30,7 @@ export default {
 		bottom: 8%;
 	}
 	background: {
-		image: linear-gradient(45deg, rgba(255, 106, 161, 1) 0%, rgba(63, 166, 255, .6) 100%), url('~/assets/images/photo/IMG_3572-min.jpg');
+		image: linear-gradient(45deg, hsla(11, 15%, 79%, .4) 0%, rgba(156, 153, 225, .4) 100%), url('~/assets/images/photo/IMG_3572-min.jpg');
 		position: center;
 		size: cover;
 	}

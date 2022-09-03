@@ -57,7 +57,7 @@ export default {
 		float: left;
 		animation: cube-grid-scale-delay 1.3s infinite ease-in-out;
 		background: {
-			color: var(--blue);
+			color: var(--secondary);
 		}
 
 		$items: 1 .2s,

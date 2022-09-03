@@ -82,6 +82,7 @@ export default {
 	position: relative;
 	z-index: 3;
 	top: -1px;
+	pointer-events: none;
 
 	&__item {
 		position: absolute;

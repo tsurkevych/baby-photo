@@ -1,6 +1,6 @@
 <template lang="pug">
 	div(:class='$style.footer')
-		layout-waves(:params='{color: "hsl(208, 97%, 87%)", index: 2, height: 198, revert: true}')
+		layout-waves(:params='{color: "hsl(11, 34%, 28%)", index: 2, height: 198, revert: true}')
 		ui-container(
 			:class='$style.container'
 		)
@@ -14,6 +14,8 @@
 	background: {
 		color: var(--secondary);
 	}
+
+	color: var(--white);
 
 	.container {
 		padding: {

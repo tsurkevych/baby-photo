@@ -49,7 +49,7 @@ $italic: (
 
 	::-webkit-scrollbar-thumb {
 		border-radius: 0;
-		background-color: var(--blue);
+		background-color: var(--secondary);
 	}
 
 	::-webkit-scrollbar-track {
@@ -58,18 +58,18 @@ $italic: (
 
 	::placeholder {
 		opacity: 1;
-		color: var(--blue);
+		color: var(--secondary);
 	}
 
 	:-webkit-autofill {
 		box-shadow: inset 0 0 0 30px var(--white);
-		-webkit-text-fill-color: var(--blue);
+		-webkit-text-fill-color: var(--secondary);
 
 		&:hover,
 		&:focus,
 		&:active {
 			box-shadow: inset 0 0 0 30px var(--white);
-			-webkit-text-fill-color: var(--blue);
+			-webkit-text-fill-color: var(--secondary);
 		}
 	}
 
@@ -82,7 +82,7 @@ $italic: (
 
 html,
 body {
-	color: var(--black);
+	color: var(--secondary);
 	line-height: 1.5;
 	background: {
 		color: var(--white);
