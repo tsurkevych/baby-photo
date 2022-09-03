@@ -16,12 +16,7 @@
 		"lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .eslintignore .",
 		"lint:style": "stylelint \"**/*.{scss,vue}\" --ignore-path .stylelintignore",
 		"lint": "npm run lint:js && npm run lint:style",
-		"lintfix": "npm run lint:js -- --fix && npm run lint:style -- --fix",
-		"prepare": "husky install"
-	},
-	"lint-staged": {
-		"*.{js,ts,vue}": "eslint --cache",
-		"*.{scss,vue}": "stylelint"
+		"lintfix": "npm run lint:js -- --fix && npm run lint:style -- --fix"
 	},
 	"dependencies": {
 		"@nuxtjs/recaptcha": "^1.1.1",
