@@ -1,0 +1,22 @@
+{
+	"title": "Про мене",
+	"photo": "IMG_3572-min",
+	"content": [
+		{
+			"tag": "h3",
+			"text": "Lorem ipsum dolor"
+		},
+		{
+			"tag": "p",
+			"text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus nostrum sed quo id ab autem expedita illum libero sint? Ipsum autem inventore aliquam provident quod delectus minus impedit placeat tempora."
+		},
+		{
+			"tag": "p",
+			"text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus nostrum sed quo id ab autem expedita illum libero sint? Ipsum autem inventore aliquam provident quod delectus minus impedit placeat tempora."
+		},
+		{
+			"tag": "p",
+			"text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus nostrum sed quo id ab autem expedita illum libero sint? Ipsum autem inventore aliquam provident quod delectus minus impedit placeat tempora."
+		}
+	]
+}

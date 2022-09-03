@@ -1,6 +1,6 @@
 <template lang="pug">
 	#__template
-		layout-header
+		layout-nav
 		main
 			nuxt
 		layout-footer

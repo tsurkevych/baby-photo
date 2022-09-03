@@ -1,5 +1,10 @@
 <template lang='pug'>
-	div 404
+	home-header(title='404')
+		p Упс :(
+		p Такої сторінки не існує
+		br
+		br
+		nuxt-link(to='/') на головну →
 </template>
 
 <script>

@@ -1,20 +1,23 @@
 <template lang="pug">
-	header(:class='$style.header')
+	ui-background(
+		:class='$style.header'
+		gradient=' linear-gradient(45deg, hsla(11, 15%, 79%, .4) 0%, rgba(156, 153, 225, .4) 100%)'
+		:images='{\
+			picture: require("@/assets/images/photo/IMG_3572-min.jpg")\
+		}'
+	)
 		ui-container
-			h1(:class='$style.header__title') Дитяча фотосесія
-			div(:class='$style.header__hr')
-				svg-icon(
-					name='diaphragm'
-					:class='$style.icon'
-				)
+			h1(:class='$style.header__title') {{ title }}
+			ui-hr(:white='true')
 			div(:class='$style.header__description')
-				p Справжні історії
-				p про щасливі моменти)
+				slot
 </template>
 
 <script>
 export default {
-
+	props: {
+		title: String
+	}
 };
 </script>
 
@@ -26,11 +29,10 @@ export default {
 	justify-content: center;
 	min-height: calc(100vh - 80px);
 	padding: {
-		top: 8%;
+		top: 6%;
 		bottom: 8%;
 	}
 	background: {
-		image: linear-gradient(45deg, hsla(11, 15%, 79%, .4) 0%, rgba(156, 153, 225, .4) 100%), url('~/assets/images/photo/IMG_3572-min.jpg');
 		position: center;
 		size: cover;
 	}
@@ -62,40 +64,6 @@ export default {
 		}
 		text: {
 			align: center;
-		}
-	}
-
-	&__hr {
-		display: flex;
-		position: relative;
-		align-items: center;
-		justify-content: center;
-		margin: {
-			top: 40px;
-			bottom: 40px;
-		}
-
-		&::before,
-		&::after {
-			content: '';
-			width: 100%;
-			max-width: 100px;
-			height: 2px;
-			background: {
-				color: var(--white);
-			}
-		}
-
-		.icon {
-			width: 50px;
-			min-width: 50px;
-			height: 50px;
-			margin: {
-				right: 40px;
-				left: 40px;
-			}
-
-			color: var(--white);
 		}
 	}
 }

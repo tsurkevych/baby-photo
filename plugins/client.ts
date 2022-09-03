@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import { Plugin } from '@nuxt/types';
 import VueTippy, { TippyComponent } from 'vue-tippy';
+import events from '@/libs/events';
 
 // import { Fancybox } from '@fancyapps/ui';
 
@@ -12,6 +13,27 @@ import VueTippy, { TippyComponent } from 'vue-tippy';
 	Autoplay,
 	Thumbs
 } from 'swiper'; */
+
+/**
+ * @description Кастомні івенти ресайзу і скролу
+ * @type {Plugin}
+ */
+const pluginEvents: Plugin = ({ store }) => {
+	const resize = () => {
+		store.commit('setWw', window.innerWidth);
+		store.commit('setWh', window.innerHeight);
+		document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+	};
+	const scroll = () => {
+		store.commit('setScrollTop', window.pageYOffset || document.documentElement.scrollTop);
+	};
+
+	events();
+	resize();
+	scroll();
+	window.addEventListener('cr', resize);
+	document.addEventListener('cs', scroll);
+};
 
 /**
  * @description Swiper
@@ -47,8 +69,6 @@ const pluginTippy: Plugin = () => {
 const pluginFancybox: Plugin = (_ctx, inject) => {
 	const { Fancybox } = require('@fancyapps/ui');
 
-	console.log(Fancybox);
-
 	inject('fancybox', Fancybox);
 };
 
@@ -58,6 +78,7 @@ const pluginFancybox: Plugin = (_ctx, inject) => {
  * @type {Plugin}
  */
 const plugin: Plugin = (...arg) => {
+	pluginEvents(...arg);
 	pluginFancybox(...arg);
 	pluginTippy(...arg);
 };

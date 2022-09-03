@@ -5,7 +5,8 @@ const config: NuxtConfig = () => {
 	return {
 		target:   'static',
 		generate: {
-			dir: 'public'
+			dir:      'public',
+			fallback: '404.html'
 		},
 		head:   {
 			__dangerouslyDisableSanitizers: [ 'script', 'noscript' ],
