@@ -1,0 +1,14 @@
+.list-item {
+	display: inline-block;
+}
+
+.list-enter-active,
+.list-leave-active {
+	transition: all $time;
+}
+
+.list-enter,
+.list-leave-to {
+	transform: translateY(-24px);
+	opacity: 0;
+}

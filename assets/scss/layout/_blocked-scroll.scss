@@ -1,0 +1,5 @@
+.ep-blocked-scroll {
+	@include fix-height;
+
+	overflow: hidden;
+}

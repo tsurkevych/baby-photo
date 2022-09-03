@@ -1,0 +1,16 @@
+/* stylelint-disable value-keyword-case */
+.ep-icon {
+	display: inline-block;
+	position: relative;
+	z-index: 2;
+	width: 24px;
+	height: 24px;
+	stroke-width: 0;
+	stroke: currentColor;
+	fill: currentColor;
+
+	use {
+		stroke: currentColor;
+		fill: currentColor;
+	}
+}

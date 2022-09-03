@@ -1,0 +1,10 @@
+/* stylelint-disable declaration-block-no-duplicate-properties */
+@mixin gradient($deg, $color1, $percent1, $color2, $percent2) {
+	background: {
+		image: -moz-linear-gradient($deg, $color1 $percent1, $color2 $percent2);
+		image: -webkit-linear-gradient($deg, $color1 $percent1, $color2 $percent2);
+		image: -o-linear-gradient($deg, $color1 $percent1, $color2 $percent2);
+		image: -ms-linear-gradient($deg, $color1 $percent1, $color2 $percent2);
+		image: linear-gradient($deg, $color1 $percent1, $color2 $percent2);
+	}
+}

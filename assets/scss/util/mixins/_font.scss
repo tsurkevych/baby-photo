@@ -1,0 +1,17 @@
+@mixin font-build($arr, $path, $family, $style: normal) {
+	@each $weight, $name in $arr {
+		$src-woff2: url('#{$path}#{$family}-#{$name}.woff2') format('woff2');
+		$src-woff: url('#{$path}#{$family}-#{$name}.woff') format('woff');
+
+		@font-face {
+			font: {
+				display: swap;
+				family: $family;
+				weight: $weight;
+				style: $style;
+			}
+
+			src: $src-woff2, $src-woff;
+		}
+	}
+}

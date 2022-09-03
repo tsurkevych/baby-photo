@@ -1,0 +1,5 @@
+assets/css
+dist
+.nuxt
+.husky
+node_modules

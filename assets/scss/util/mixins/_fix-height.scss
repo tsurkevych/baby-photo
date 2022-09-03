@@ -1,0 +1,28 @@
+@mixin fix-mobile-height($h, $type) {
+	@if $type == 'max' {
+		max-height: calc(100vh - #{$h});
+	} @else if $type == 'min' {
+		min-height: calc(100vh - #{$h});
+	} @else {
+		height: calc(100vh - #{$h});
+		min-height: calc(100vh - #{$h});
+		max-height: calc(100vh - #{$h});
+	}
+}
+
+@mixin fix-mobile-height-2($h, $type) {
+	@if $type == 'max' {
+		max-height: calc((var(--vh, 1vh) * 100) - #{$h});
+	} @else if $type == 'min' {
+		min-height: calc((var(--vh, 1vh) * 100) - #{$h});
+	} @else {
+		height: calc((var(--vh, 1vh) * 100) - #{$h});
+		min-height: calc((var(--vh, 1vh) * 100) - #{$h});
+		max-height: calc((var(--vh, 1vh) * 100) - #{$h});
+	}
+}
+
+@mixin fix-height($h: '0px', $type: 'normal') {
+	@include fix-mobile-height($h, $type);
+	@include fix-mobile-height-2($h, $type);
+}

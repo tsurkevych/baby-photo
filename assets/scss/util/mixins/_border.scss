@@ -1,0 +1,11 @@
+@mixin border($type: all, $color: hsl(210, 3%, 85%), $width: 1, $style: solid) {
+	@if $type == all {
+		border: #{$width}px $style $color;
+	} @else if map-get((top: top, right: right, bottom: bottom, left: left), $type) {
+		border: {
+			#{$type}: #{$width}px $style $color;
+		}
+	} @else {
+		@error 'введіть тип бордера';
+	}
+}

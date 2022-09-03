@@ -1,0 +1,6 @@
+plugins/api
+dist
+sw.*
+.nuxt
+.husky
+node_modules
