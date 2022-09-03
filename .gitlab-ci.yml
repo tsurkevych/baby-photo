@@ -6,9 +6,10 @@
 # Full project: https://gitlab.com/pages/plain-html
 pages:
   stage: deploy
-  script:
+  before_script:
     - npm i
     - npm run generate
+  script:
     - mkdir .public
     - cp -r ./* .public 
 #    - rm -rf public
