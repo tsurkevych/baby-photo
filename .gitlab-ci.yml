@@ -6,10 +6,6 @@
 # Full project: https://gitlab.com/pages/plain-html
 pages:
   stage: deploy
-  before_script:
-    - pkg install nodejs
-    - npm i
-    - npm run generate
   script:
     - mkdir .public
     - cp -r ./* .public 
