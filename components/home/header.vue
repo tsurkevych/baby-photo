@@ -7,7 +7,7 @@
 		}'
 	)
 		ui-container
-			h1(:class='$style.header__title') {{ title }}
+			h1(:class='$style.header__title' v-html='title')
 			ui-hr(:white='true')
 			div(:class='$style.header__description')
 				slot
@@ -51,7 +51,7 @@ export default {
 
 		@include b-up(md) {
 			font: {
-				size: 100px;
+				size: 60px;
 			}
 		}
 	}
