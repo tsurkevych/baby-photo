@@ -10,6 +10,9 @@ const config: NuxtConfig = () => {
 		},
 		head:   {
 			__dangerouslyDisableSanitizers: [ 'script', 'noscript' ],
+			htmlAttrs:                      {
+				lang: 'uk-UA'
+			},
 			meta:                           [
 				{
 					'http-equiv': 'X-UA-Compatible',
@@ -17,11 +20,19 @@ const config: NuxtConfig = () => {
 				},
 				{
 					name:    'color',
-					content: '#1060c1'
+					content: '#60382f'
 				},
 				{
 					name:    'google-site-verification',
 					content: 'K3zhPlQVKS_lekSNBNQ6h9S-l3PgV1b-8IgShu3LqZ0'
+				},
+				{
+					property: 'og:url',
+					content:  'https://baby-photo.space/'
+				},
+				{
+					property: 'og:locale',
+					content:  'uk-UA'
 				}
 			],
 			link: [
@@ -120,7 +131,7 @@ const config: NuxtConfig = () => {
 				favicon:     true,
 				name:        'tata-g',
 				author:      'tata-g',
-				theme_color: '#0261AF',
+				theme_color: '#60382f',
 				lang:        'ua',
 				ogSiteName:  'baby-photo.space',
 				ogType:      'website',

@@ -18,6 +18,7 @@
 			a(
 				:class='$style.phone'
 				href='tel:+380682029597'
+				title='Телефон'
 			)
 				svg-icon(
 					:class='$style.icon'

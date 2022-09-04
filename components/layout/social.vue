@@ -4,6 +4,7 @@
 			v-for='(item, index) in items'
 			:href='item.link'
 			:class='$style.social__item'
+			:title='item.icon'
 		)
 			svg-icon(
 				:name='item.icon'
