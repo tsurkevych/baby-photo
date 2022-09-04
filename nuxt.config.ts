@@ -101,7 +101,7 @@ const config: NuxtConfig = () => {
 			]
 		},
 		router: {
-			middleware:   [ 'trailing-slash-redirect', 'user-agent' ]
+			// middleware:   [ 'trailing-slash-redirect', 'user-agent' ]
 		},
 		plugins:      [
 			{
