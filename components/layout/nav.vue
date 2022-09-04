@@ -11,7 +11,7 @@
 				)
 			transition(name='header')
 				layout-menu(
-					v-show='ww === 0 || (ww >= $size.md) || open'
+					v-show='(ww === 0 || (ww >= $size.md) || open) && $route.path === "/"'
 					:class='$style.header__menu'
 					@click='setOpen(false)'
 				)
@@ -27,7 +27,7 @@
 				span(v-show='ww === 0 || ww >= $size.md') +38 (068) 202 95 97
 			client-only
 				div(
-					v-if='ww < $size.md'
+					v-if='(ww < $size.md) && $route.path === "/"'
 					:class='$style.burger'
 					aria-label='menu'
 					@click='setOpen(!open)'
