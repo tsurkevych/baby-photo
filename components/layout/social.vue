@@ -18,15 +18,15 @@ export default {
 			items: [
 				{
 					icon: 'telegram',
-					link: '#'
+					link: 'tg://resolve?domain=Tetyana_Galabitska'
 				},
 				{
 					icon: 'viber',
-					link: '#'
+					link: 'viber://chat?number=%2B380682029597'
 				},
 				{
 					icon: 'instagram',
-					link: '#'
+					link: 'https://www.instagram.com/baby_foto_kiev/'
 				}
 			]
 		};

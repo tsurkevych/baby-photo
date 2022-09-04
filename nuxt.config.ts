@@ -111,7 +111,7 @@ const config: NuxtConfig = () => {
 			icon: {
 				source:   '[srcDir]/[staticDir]/icon.png',
 				fileName: 'icon.png',
-				purpose:  'maskable'
+				purpose:  'any'
 			},
 			meta: {
 				charset:     'utf-8',
