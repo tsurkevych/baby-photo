@@ -81,7 +81,10 @@ export default {
 	}
 
 	&__content {
-		padding: 16px 16px 16px 60px;
+		padding: 16px;
+		text: {
+			align: justify;
+		}
 
 		@include b-up(md) {
 			padding: 32px 32px 32px 60px;
