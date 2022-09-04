@@ -49,7 +49,7 @@ const pluginEvents: Plugin = ({ store }) => {
 }; */
 
 /**
- * @description Tippy
+ * @description Fancybox
  * @type {Plugin}
  */
 const pluginFancybox: Plugin = (_ctx, inject) => {

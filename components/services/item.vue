@@ -30,7 +30,7 @@
 					:class='$style.icon'
 				)
 				| {{ item }}
-			li(v-if='item.images')
+			//- li(v-if='item.images')
 				div(:class='$style.gallery')
 					ui-background(
 						v-for='(item, i) in item.images'

@@ -1,6 +1,6 @@
 <template lang="pug">
 	div(:class='[$style.footer, footer && $style.bottom]')
-		layout-waves(:params='{color: "hsl(11, 34%, 28%)", index: 2, height: 198, revert: true}')
+		layout-waves(:params='{color: "#e0cac6", index: 2, height: 198, revert: true}')
 		ui-container(:class='$style.container')
 			ui-row(:class='$style.row')
 				ui-grid(
@@ -31,10 +31,10 @@ export default {
 <style lang="scss" module>
 .footer {
 	background: {
-		color: var(--secondary);
+		color: color.scale(map.get($colors, 'main'), $lightness: -10%);
 	}
 
-	color: var(--white);
+	color: var(--secondary);
 
 	@include b-down(sm) {
 		text: {
