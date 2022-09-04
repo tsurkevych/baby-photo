@@ -1,6 +1,6 @@
-import { GetterTree, MutationTree, ActionTree } from 'vuex';
+import { TataRootStates, TataRootGetters, TataRootMutations, TataRootActions } from '@/types';
 
-export const state = (): any => ({
+export const state = (): TataRootStates => ({
 	ww:        0,
 	wh:        0,
 	scrollTop: 0,
@@ -8,7 +8,7 @@ export const state = (): any => ({
 	loading:   false
 });
 
-export const getters: GetterTree<any, any> = {
+export const getters: TataRootGetters = {
 	margin:    state => state.margin,
 	ww:        state => state.ww,
 	wh:        state => state.wh,
@@ -16,7 +16,7 @@ export const getters: GetterTree<any, any> = {
 	loading:   state => state.loading
 };
 
-export const mutations: MutationTree<any> = {
+export const mutations: TataRootMutations = {
 	setWw:        (state, payload) => (state.ww = payload),
 	setWh:        (state, payload) => (state.wh = payload),
 	setScrollTop: (state, payload) => (state.scrollTop = payload),
@@ -24,7 +24,7 @@ export const mutations: MutationTree<any> = {
 	setLoading:   (state, payload) => (state.loading = payload)
 };
 
-export const actions: ActionTree<any, any> = {
+export const actions: TataRootActions = {
 
 	/**
 	 * @param {object} ctx ctx

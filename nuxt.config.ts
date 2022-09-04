@@ -61,15 +61,14 @@ const config: NuxtConfig = () => {
 			'@nuxtjs/pwa',
 			'@nuxtjs/svg',
 			'@nuxtjs/stylelint-module',
-			'@nuxtjs/style-resources',
-			'@nuxtjs/device'
+			'@nuxtjs/style-resources'
 		],
 		modules:        [
-			'@nuxtjs/axios',
 			'@nuxtjs/robots',
 			'@nuxtjs/sitemap',
-			'@nuxtjs/svg-sprite',
-			'@nuxt/content'
+			'@nuxtjs/svg-sprite'
+
+			// '~/modules/gtm/index'
 		],
 		svgSprite: {
 			input:        '~/assets/svg/',
@@ -109,6 +108,12 @@ const config: NuxtConfig = () => {
 				}
 			}
 		},
+
+		/* gtm: {
+			id:    'G-DJBYERN53T',
+			layer: 'dataLayer',
+			dev:   process.env.NODE_ENV === 'production'
+		}, */
 		sitemap: {
 			hostname: 'https://baby-photo.space/',
 			gzip:     true
@@ -146,9 +151,6 @@ const config: NuxtConfig = () => {
 		},
 		cli: {
 			badgeMessages: [ 'tata-g' ]
-		},
-		device: {
-			refreshOnResize: true
 		},
 		loading: '~/components/loading.vue'
 	};

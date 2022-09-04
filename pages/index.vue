@@ -1,8 +1,6 @@
 <template lang="pug">
 	div
-		home-header(title='Дитяча фотосесія')
-			p Справжні історії
-			p про щасливі моменти)
+		home-header(title='Справжні історії <br> про щасливі моменти )')
 		about
 		services
 		portfolio
