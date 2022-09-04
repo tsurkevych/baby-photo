@@ -37,6 +37,8 @@ const config: NuxtConfig = () => {
 		},
 		plugins:      [
 			{
+				src:  '~/plugins/server.ts'
+			}, {
 				src:  '~/plugins/client.ts',
 				mode: 'client'
 			}

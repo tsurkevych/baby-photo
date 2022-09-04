@@ -1,5 +1,5 @@
 <template lang="pug">
-	section(:class='$style.gallery')
+	section#gallery(:class='$style.gallery')
 		layout-waves(:params='{color: "#f4ebea", index: 4, height: 242, revert: true }')
 		ui-container(:class='$style.container')
 			ui-headline {{ params.title }}

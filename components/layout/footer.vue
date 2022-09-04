@@ -1,27 +1,56 @@
 <template lang="pug">
-	div(:class='$style.footer')
+	div(:class='[$style.footer, footer && $style.bottom]')
 		layout-waves(:params='{color: "hsl(11, 34%, 28%)", index: 2, height: 198, revert: true}')
-		ui-container(
-			:class='$style.container'
-		)
-			| © {{ new Date().getFullYear() }} TataG
+		ui-container(:class='$style.container')
+			ui-row(:class='$style.row')
+				ui-grid(
+					v-if='footer'
+					:md='12'
+					:class='$style.footer__copy'
+				)  © {{ new Date().getFullYear() }} TataG
+				ui-grid(
+					:md='12'
+					:class='$style.footer__social'
+				)
+					layout-social
 </template>
+
+<script>
+export default {
+	props: {
+		footer: {
+			type: Boolean,
+			default() {
+				return true;
+			}
+		}
+	}
+};
+</script>
 
 <style lang="scss" module>
 .footer {
-	position: sticky;
-	top: 0;
 	background: {
 		color: var(--secondary);
 	}
 
 	color: var(--white);
 
+	@include b-down(sm) {
+		text: {
+			align: center;
+		}
+	}
+
 	.container {
 		padding: {
-			top: 12px;
+			top: 24px;
 			bottom: 24px;
 		}
+	}
+
+	.row {
+		align-items: center;
 	}
 
 	&__logo {
@@ -30,6 +59,32 @@
 		svg {
 			display: block;
 			height: 48px;
+		}
+	}
+
+	&__copy {
+		@include b-down(sm) {
+			order: 3;
+		}
+	}
+
+	&__social {
+		display: flex;
+		justify-content: center;
+
+		@include b-up(md) {
+			justify-content: flex-end;
+		}
+	}
+
+	&.bottom {
+		.footer__social {
+			@include b-down(sm) {
+				order: 1;
+				margin: {
+					bottom: 24px;
+				}
+			}
 		}
 	}
 }

@@ -1,5 +1,5 @@
 <template lang="pug">
-	section(:class='$style.services')
+	section#services(:class='$style.services')
 		layout-waves(:params='{color: "hsl(0, 0%, 100%)", index: 6, height: 213, revert: true }')
 		ui-container(:class='$style.container')
 			ui-headline {{ params.title }}

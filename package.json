@@ -21,8 +21,10 @@
 	"dependencies": {
 		"@fancyapps/ui": "^4.0.31",
 		"@nuxtjs/recaptcha": "^1.1.1",
+		"animated-scroll-to": "^2.3.0",
 		"css-reset-and-normalize": "^2.3.6",
 		"detect-browser": "^5.3.0",
+		"gsap": "^3.11.1",
 		"hamburgers": "^1.2.1",
 		"nuxt": "^2.15.8",
 		"prism-themes": "^1.9.0",

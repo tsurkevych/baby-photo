@@ -4,6 +4,8 @@
 		main
 			nuxt
 		layout-footer
+		client-only
+			lazy-layout-cursor
 </template>
 
 <script>

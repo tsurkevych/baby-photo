@@ -30,7 +30,7 @@ export default {
 .loader {
 	display: flex;
 	position: absolute;
-	z-index: 10;
+	z-index: 3;
 	top: 0;
 	right: 0;
 	bottom: 0;

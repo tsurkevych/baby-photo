@@ -1,6 +1,4 @@
-import Vue from 'vue';
 import { Plugin } from '@nuxt/types';
-import VueTippy, { TippyComponent } from 'vue-tippy';
 import events from '@/libs/events';
 
 // import { Fancybox } from '@fancyapps/ui';
@@ -54,18 +52,6 @@ const pluginEvents: Plugin = ({ store }) => {
  * @description Tippy
  * @type {Plugin}
  */
-const pluginTippy: Plugin = () => {
-	Vue.use(VueTippy, {
-		theme: 'light-border',
-		arrow: true
-	});
-	Vue.component('Tippy', TippyComponent);
-};
-
-/**
- * @description Tippy
- * @type {Plugin}
- */
 const pluginFancybox: Plugin = (_ctx, inject) => {
 	const { Fancybox } = require('@fancyapps/ui');
 
@@ -80,7 +66,6 @@ const pluginFancybox: Plugin = (_ctx, inject) => {
 const plugin: Plugin = (...arg) => {
 	pluginEvents(...arg);
 	pluginFancybox(...arg);
-	pluginTippy(...arg);
 };
 
 export default plugin;
