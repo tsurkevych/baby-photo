@@ -1,5 +1,5 @@
 <template lang='pug'>
-	home-header(title='404')
+	layout-header(title='404')
 		p Упс :(
 		p Такої сторінки не існує
 		br
