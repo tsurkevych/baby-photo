@@ -3,3 +3,4 @@ dist
 .nuxt
 .husky
 node_modules
+public

@@ -29,7 +29,6 @@
 				div(
 					v-if='(ww < $size.md) && $route.path === "/"'
 					:class='$style.burger'
-					aria-label='menu'
 					@click='setOpen(!open)'
 				)
 					span(:class='[$style.hamburger, $style["hamburger--squeeze"], open && $style["is-active"]]')

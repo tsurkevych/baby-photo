@@ -16,9 +16,6 @@ const config: NuxtConfig = () => {
 		head:   {
 			__dangerouslyDisableSanitizers: [ 'script', 'noscript' ],
 			title,
-			htmlAttrs:                      {
-				lang: 'uk-UA'
-			},
 			meta:                           [
 				{
 					'http-equiv': 'X-UA-Compatible',
@@ -184,17 +181,17 @@ const config: NuxtConfig = () => {
 			icon: {
 				source:   '[srcDir]/[staticDir]/icon.png',
 				fileName: 'icon.png',
-				purpose:  'any'
+				purpose:  'maskable'
 			},
 			meta: {
 				charset:     'utf-8',
-				viewport:    'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0',
+				viewport:    'width=device-width, initial-scale=1',
 				mobileApp:   true,
 				favicon:     true,
 				name:        'tata-g',
 				author:      'tata-g',
 				theme_color: '#60382f',
-				lang:        'ua',
+				lang:        'uk-UA',
 				ogSiteName:  'baby-photo.space',
 				ogType:      'website',
 				ogTitle:     false
@@ -202,7 +199,7 @@ const config: NuxtConfig = () => {
 			manifest: {
 				name:                    'tata-g',
 				background_color:        '#ffffff',
-				lang:                    'ru',
+				lang:                    'uk',
 				useWebmanifestExtension: false
 			}
 		},
