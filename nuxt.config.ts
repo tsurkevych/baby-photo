@@ -73,6 +73,17 @@ const config: NuxtConfig = () => {
 				}
 			],
 			script: [
+				process.env.NODE_ENV === 'production' && {
+					src:   'https://www.googletagmanager.com/gtag/js?id=G-DJBYERN53T',
+					async: true
+				},
+				process.env.NODE_ENV === 'production' && {
+					innerHTML: `window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+				  
+					gtag('config', 'G-DJBYERN53T');`
+				},
 				{
 					innerHTML: JSON.stringify({
 						'@context': 'https://schema.org',
