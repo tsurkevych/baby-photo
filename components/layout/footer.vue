@@ -1,6 +1,5 @@
 <template lang="pug">
 	div(:class='[$style.footer, footer && $style.bottom]')
-		layout-waves(:params='{color: "#e0cac6", index: 2, height: 198, revert: true}')
 		ui-container(:class='$style.container')
 			ui-row(:class='$style.row')
 				ui-grid(

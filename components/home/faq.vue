@@ -36,7 +36,7 @@ export default {
 	.container {
 		padding: {
 			top: 1%;
-			bottom: 12%;
+			bottom: 6%;
 		}
 	}
 }

@@ -1,10 +1,10 @@
 <template lang="pug">
 	div
-		home-header(title='Справжні історії <br> про щасливі моменти )')
-		//- about
-		services
-		portfolio
-		faq
+		layout-header(title='Справжні історії <br> про щасливі моменти )')
+		//- home-about
+		home-services
+		home-portfolio
+		home-faq
 </template>
 
 <script>

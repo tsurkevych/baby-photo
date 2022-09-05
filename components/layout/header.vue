@@ -1,6 +1,6 @@
 <template lang="pug">
 	ui-background(
-		:class='$style.header'
+		:class='[$style.header, $route.path === "/" && $style.home]'
 		gradient=' linear-gradient(45deg, hsla(11, 15%, 79%, .4) 0%, rgba(156, 153, 225, .4) 100%)'
 		:images='{\
 			picture: require("@/assets/images/photo/IMG_3572-min.jpg")\
@@ -27,7 +27,7 @@ export default {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	min-height: calc(100vh - 80px);
+	min-height: calc(100vh - 220px);
 	padding: {
 		top: 6%;
 		bottom: 8%;
@@ -35,6 +35,14 @@ export default {
 	background: {
 		position: center;
 		size: cover;
+	}
+
+	@include b-up(md) {
+		min-height: calc(100vh - 160px);
+	}
+
+	&.home {
+		min-height: calc(100vh - 80px);
 	}
 
 	&__title {
