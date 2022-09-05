@@ -5,7 +5,7 @@
 			ui-headline {{ params.title }}
 			div(v-for='(item, index) in params.items')
 				ui-hr(v-if='index !== 0')
-				services-item(
+				home-services-item(
 					:key='index'
 					:item='item'
 				)

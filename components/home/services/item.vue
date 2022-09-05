@@ -11,7 +11,7 @@
 			v-if='item.items'
 			:class='$style.service__sub'
 		)
-			services-item(
+			home-services-item(
 				v-for='(item, index) in item.items'
 				:key='index'
 				:item='item'
