@@ -18,9 +18,8 @@
 						"IMG_0616-min",
 						"IMG_0922-min",
 						"IMG_0939-min",
-						"IMG_0966-min",
-						"IMG_3509-min",
-						"IMG_3572-min"
+						"IMG_3626-min",
+						"IMG_0912-min"
 					],
 					"price": 3000
 				},
@@ -36,12 +35,14 @@
 						"Термін готовності фото - 3 тижні"
 					],
 					"images": [
-						"IMG_0616-min",
-						"IMG_0922-min",
-						"IMG_0939-min",
 						"IMG_0966-min",
-						"IMG_3509-min",
-						"IMG_3572-min"
+						"IMG_0954-min",
+						"IMG_0945-min",
+						"IMG_0879-min",
+						"IMG_0854-min",
+						"IMG_0828-min",
+						"IMG_0736-min",
+						"IMG_0605-min"
 					],
 					"price": 4500
 				}
@@ -61,12 +62,16 @@
 			],
 			"price": 2500,
 			"images": [
-				"IMG_0616-min",
-				"IMG_0922-min",
-				"IMG_0939-min",
-				"IMG_0966-min",
-				"IMG_3509-min",
-				"IMG_3572-min"
+				"IMG_3626-min",
+				"IMG_3598-min",
+				"IMG_3592-min",
+				"IMG_2003-min",
+				"IMG_1896-min",
+				"IMG_1887-min",
+				"IMG_1818-min",
+				"IMG_0704-min",
+				"IMG_0602-min",
+				"IMG_0508-min"
 			]
 		},
 		{
@@ -80,12 +85,28 @@
 			],
 			"price": 1000,
 			"images": [
-				"IMG_0616-min",
-				"IMG_0922-min",
-				"IMG_0939-min",
-				"IMG_0966-min",
-				"IMG_3509-min",
-				"IMG_3572-min"
+				"IMG_0092-min",
+				"IMG_0155-min",
+				"IMG_0201-min",
+				"IMG_0285-min",
+				"IMG_1095-min",
+				"IMG_1138-min",
+				"IMG_1145-min",
+				"IMG_1199-min",
+				"IMG_1234-min",
+				"IMG_2373-min",
+				"IMG_2446-min",
+				"IMG_2654-min",
+				"IMG_3350-min",
+				"IMG_3372-min",
+				"IMG_3422-min",
+				"IMG_3425-min",
+				"IMG_4466-min",
+				"IMG_4758-min",
+				"IMG_4813-min",
+				"IMG_4837-min",
+				"IMG_4915-min",
+				"IMG_ор2662-min"
 			]
 		}
 	]

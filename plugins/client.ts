@@ -1,16 +1,13 @@
 import { Plugin } from '@nuxt/types';
-import events from '@/libs/events';
-
-// import { Fancybox } from '@fancyapps/ui';
-
-/* import {
+import {
 	Swiper,
 	SwiperOptions,
 	Navigation,
-	Pagination,
-	Autoplay,
-	Thumbs
-} from 'swiper'; */
+	Autoplay
+} from 'swiper';
+import events from '@/libs/events';
+
+// import { Fancybox } from '@fancyapps/ui';
 
 /**
  * @description Кастомні івенти ресайзу і скролу
@@ -38,15 +35,10 @@ const pluginEvents: Plugin = ({ store }) => {
  * @example this.$swiper(el, params)
  * @type {Plugin}
  */
-/* const pluginSwiper: Plugin = (_ctx, inject) => {
-	Swiper.use([
-		Navigation,
-		Pagination,
-		Autoplay,
-		Thumbs
-	]);
+const pluginSwiper: Plugin = (_ctx, inject) => {
+	Swiper.use([ Navigation, Autoplay ]);
 	inject('swiper', (el: HTMLElement, params: SwiperOptions): Swiper => new Swiper(el, params));
-}; */
+};
 
 /**
  * @description Fancybox
@@ -65,6 +57,7 @@ const pluginFancybox: Plugin = (_ctx, inject) => {
  */
 const plugin: Plugin = (...arg) => {
 	pluginEvents(...arg);
+	pluginSwiper(...arg);
 	pluginFancybox(...arg);
 };
 

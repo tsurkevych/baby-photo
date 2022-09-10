@@ -30,18 +30,35 @@
 					:class='$style.icon'
 				)
 				| {{ item }}
-			//- li(v-if='item.images')
-				div(:class='$style.gallery')
-					ui-background(
-						v-for='(item, i) in item.images'
-						:key='i'
-						:class='$style.gallery__item'
-						:images='{\
-							picture: require("@/assets/images/photo/" + item + ".jpg")\
-						}'
-						:data-fancybox='`gallery_${_uid}`'
-						:data-src='require("@/assets/images/photo/" + item + ".jpg")'
-					)
+			li(
+				v-if='item.images'
+				:class='$style.service__gallery'
+			)
+				button(
+					ref='prev'
+					:class='[$style.gallery__arrow, $style.prev]'
+				)
+					svg-icon(name='arrow-left' :class='$style.icon')
+				button(
+					ref='next'
+					:class='[$style.gallery__arrow, $style.next]'
+				)
+					svg-icon(name='arrow-right' :class='$style.icon')
+				.swiper(
+					:class='$style.gallery'
+					ref='swiper'
+				)
+					.swiper-wrapper
+						ui-background.swiper-slide(
+							v-for='(item, i) in item.images'
+							:key='i'
+							:class='$style.gallery__item'
+							:images='{\
+								picture: require("@/assets/images/thumbs/" + item + ".jpg")\
+							}'
+							:data-fancybox='`gallery_${_uid}`'
+							:data-src='require("@/assets/images/popup/" + item + ".jpg")'
+						)
 		div(
 			v-if='item.price'
 			:class='$style.service__price'
@@ -63,6 +80,17 @@ export default {
 				return 1;
 			}
 		}
+	},
+	mounted() {
+		this.$swiper(this.$refs.swiper, {
+			speed:         400,
+			slidesPerView: 'auto',
+			spaceBetween:  16,
+			navigation:    {
+				nextEl: this.$refs.next,
+				prevEl: this.$refs.prev
+			}
+		});
 	}
 };
 </script>
@@ -72,7 +100,8 @@ export default {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	overflow: hidden;
+
+	// overflow: hidden;
 	border: {
 		radius: 4px;
 	}
@@ -130,6 +159,12 @@ export default {
 
 	&__list {
 		padding: 16px;
+	}
+
+	&__gallery {
+		display: flex;
+		position: relative;
+		align-items: center;
 	}
 
 	&__item {
@@ -203,12 +238,13 @@ export default {
 
 	&__item {
 		width: 50px;
+		max-width: 50px;
 		height: 50px;
-		margin: 0 8px;
 		cursor: zoom-in;
-		margin: {
+
+		/* margin: {
 			bottom: 16px;
-		}
+		} */
 		background: {
 			position: center;
 			size: cover;
@@ -216,7 +252,44 @@ export default {
 
 		@include b-up(md) {
 			width: 100px;
+			max-width: 100px;
 			height: 100px;
+		}
+	}
+
+	&__arrow {
+		display: flex;
+		position: absolute;
+		z-index: 5;
+		top: calc(50% - 20px);
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		transition: opacity $time;
+		box-shadow: 2px 2px 5px var(--secondary);
+		border: {
+			radius: 50%;
+		}
+		background: {
+			color: var(--main);
+		}
+
+		&.prev {
+			left: -20px;
+		}
+
+		&.next {
+			right: -20px;
+		}
+
+		&[class~='swiper-button-disabled'] {
+			opacity: 0;
+		}
+
+		.icon {
+			width: 12px;
+			height: 12px;
 		}
 	}
 }

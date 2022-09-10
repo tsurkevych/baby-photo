@@ -14,10 +14,10 @@
 					ui-background(
 						:class='$style.gallery__item'
 						:images='{\
-							picture: require("@/assets/images/photo/" + item + ".jpg")\
+							picture: require("@/assets/images/gallery/" + item + ".jpg")\
 						}'
 						:data-fancybox='`gallery_${_uid}`'
-						:data-src='require("@/assets/images/photo/" + item + ".jpg")'
+						:data-src='require("@/assets/images/popup/" + item + ".jpg")'
 					)
 </template>
 
