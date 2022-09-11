@@ -20,10 +20,10 @@ export default {
 	data() {
 		return {
 			menu: [
-				/* {
-					label: 'Фотограф',
+				{
+					label: 'Про мене',
 					id:    'about'
-				}, */
+				},
 				{
 					label: 'Послуги',
 					id:    'services'

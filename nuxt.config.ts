@@ -1,6 +1,6 @@
 import { NuxtConfig } from '@nuxt/types';
 
-const title = 'ᐉ TataG • Дитячий фотограф • Дитяче фото';
+const title = 'ᐉ TataG • Дитячий фотограф Київ • Дитяче фото';
 const url = 'https://baby-photo.space';
 const description = 'Потрібен дитячий фотограф? Дитяча фотосесія, як підготуватися, зйомка новонародженого. NEWBORN. Сімейна історія. Life style';
 const image = url + '/logo.png';
