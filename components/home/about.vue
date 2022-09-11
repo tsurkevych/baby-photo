@@ -4,15 +4,15 @@
 		ui-container(:class='$style.container')
 			ui-headline {{ params.title }}
 			ui-row(:class='$style.row')
-				ui-grid(:sm='10')
+				//- ui-grid(:sm='10')
 					ui-background(
 						:class='$style.faq__photo'
 						:images='{\
 							picture: require("@/assets/images/photo/" + params.photo + ".jpg")\
 						}'
 					)
-				ui-grid(:sm='2')
-				ui-grid(:sm='12')
+				ui-grid(:sm='5')
+				ui-grid(:sm='14')
 					ui-content(:content='params.content')
 </template>
 
@@ -31,6 +31,9 @@ export default {
 .faq {
 	background: {
 		color: color.scale(map.get($colors, 'main'), $lightness: 20%);
+	}
+	text: {
+		align: center;
 	}
 
 	.container {

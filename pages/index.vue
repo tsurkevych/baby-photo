@@ -1,7 +1,7 @@
 <template lang="pug">
 	div
 		layout-header(title='Справжні історії <br> про щасливі моменти )')
-		//- home-about
+		home-about
 		home-services
 		home-portfolio
 		home-faq

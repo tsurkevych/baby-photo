@@ -4,19 +4,27 @@
 	"content": [
 		{
 			"tag": "h3",
-			"text": "Lorem ipsum dolor"
+			"text": "Привіт. Мене звуть Тетяна і я  фотограф)"
 		},
 		{
 			"tag": "p",
-			"text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus nostrum sed quo id ab autem expedita illum libero sint? Ipsum autem inventore aliquam provident quod delectus minus impedit placeat tempora."
+			"text": "Моя спеціалізація – дітки. Зйомки новонароджених Newborn, дітки до року  та святкування першого дня народження. Також знімаю сімейні фотосесії, звісно ж з дітками)"
 		},
 		{
 			"tag": "p",
-			"text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus nostrum sed quo id ab autem expedita illum libero sint? Ipsum autem inventore aliquam provident quod delectus minus impedit placeat tempora."
+			"text": "Щому саме цей напрямок? Все дуже просто: малюки завджи дарують посмішки, радість і щирість. В кадрі тільки чесні, справжні, живі емоції."
 		},
 		{
 			"tag": "p",
-			"text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus nostrum sed quo id ab autem expedita illum libero sint? Ipsum autem inventore aliquam provident quod delectus minus impedit placeat tempora."
+			"text": "Я і сама мама двох діток, тому практику спілкування з малюками маю неабияку. Точно знайду підхід до вашої маленької моделі."
+		},
+		{
+			"tag": "p",
+			"text": "Пройшла професійне навчання щоб комфортно і безпечно провести першу фотосесію Вашого маляти."
+		},
+		{
+			"tag": "p",
+			"text": "З радістю допоможу Вам зберегти незабутні моменти життя в обє'ктиві камери. "
 		}
 	]
 }
