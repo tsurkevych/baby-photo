@@ -1,1 +1,1 @@
-# babe-photo
+# baby-photo

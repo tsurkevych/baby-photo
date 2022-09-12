@@ -4,10 +4,10 @@
 		ui-container(:class='$style.container')
 			ui-headline {{ params.title }}
 			ui-row(:class='$style.row')
-				ui-grid(:sm='12')
+				ui-grid(:sm='14')
 					ui-content(:content='params.content')
-				ui-grid(:sm='2')
-				ui-grid(:sm='10')
+				ui-grid(:xs='2' :sm='2')
+				ui-grid(:xs='20' :sm='8')
 					ui-background(
 						:class='$style.faq__photo'
 						:images='{\
