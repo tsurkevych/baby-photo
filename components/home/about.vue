@@ -4,16 +4,16 @@
 		ui-container(:class='$style.container')
 			ui-headline {{ params.title }}
 			ui-row(:class='$style.row')
-				//- ui-grid(:sm='10')
+				ui-grid(:sm='12')
+					ui-content(:content='params.content')
+				ui-grid(:sm='2')
+				ui-grid(:sm='10')
 					ui-background(
 						:class='$style.faq__photo'
 						:images='{\
-							picture: require("@/assets/images/photo/" + params.photo + ".jpg")\
+							picture: require("@/assets/images/" + params.photo + ".jpg")\
 						}'
 					)
-				ui-grid(:sm='5')
-				ui-grid(:sm='14')
-					ui-content(:content='params.content')
 </template>
 
 <script>
@@ -32,9 +32,10 @@ export default {
 	background: {
 		color: color.scale(map.get($colors, 'main'), $lightness: 20%);
 	}
-	text: {
+
+	/* text: {
 		align: center;
-	}
+	} */
 
 	.container {
 		padding: {
@@ -59,9 +60,9 @@ export default {
 	.row {
 		align-items: center;
 
-		@include b-only(xs) {
+		/* @include b-only(xs) {
 			flex-direction: column-reverse;
-		}
+		} */
 	}
 }
 </style>
