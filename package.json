@@ -9,7 +9,7 @@
 		"url": "https://gitlab.com/tsurkevych/baby-photo.git"
 	},
 	"scripts": {
-		"dev": "nuxt",
+		"dev": "nuxt --open",
 		"build": " npm run lint && nuxt build --modern=server",
 		"start": "nuxt start",
 		"generate": "npm run lint && nuxt generate",
