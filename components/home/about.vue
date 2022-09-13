@@ -33,9 +33,9 @@ export default {
 		color: color.scale(map.get($colors, 'main'), $lightness: 20%);
 	}
 
-	/* text: {
-		align: center;
-	} */
+	text: {
+		align: justify;
+	}
 
 	.container {
 		padding: {
