@@ -191,8 +191,7 @@ const config: NuxtConfig = () => {
 		pwa: {
 			icon: {
 				source:   '[srcDir]/[staticDir]/icon.png',
-				fileName: 'icon.png',
-				purpose:  'any'
+				fileName: 'icon.png'
 			},
 			meta: {
 				charset:     'utf-8',
