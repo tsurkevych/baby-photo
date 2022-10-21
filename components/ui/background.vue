@@ -11,12 +11,12 @@
 				v-if='!load'
 				:class='$style.load'
 				:type='loader.type'
+				:background='loader.background'
 			)
 		slot
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 
 /**
  * @summary фонове зображення
@@ -61,63 +61,50 @@ export default {
 	 */
 	data() {
 		return {
-			load:  false,
-			style: null
+			load:              false,
+			style:             null,
+			lazyImageObserver: null
 		};
-	},
-	computed: mapGetters({
-		wh:        'wh',
-		scrollTop: 'scrollTop'
-	}),
-	watch: {
-		scrollTop() {
-			!this.load && this.init();
-		}
 	},
 	created() {
 		if (!this.lazy) {
 			const g = this.gradient ? (this.gradient + ',') : '';
 
 			this.style = {
-				backgroundImage: g + `url(${this.$device?.isSafari ? this.images.picture : (this.images.webp || this.images.picture)})`
+				backgroundImage: g + `url(${this.$device.isSafari ? this.images.picture : (this.images.webp || this.images.picture)})`
 			};
 			this.load = true;
 		}
 	},
 	mounted() {
-		this.startInit && this.lazyInit();
 		!this.load && this.init();
 	},
+	destroyed() {
+		this.lazyImageObserver && this.lazyImageObserver.disconnect();
+	},
 	methods: {
-		/**
-		 * @description ініціалізація
-		 */
-		init() {
-			const { top, bottom } = this.$el.getBoundingClientRect();
-
-			if (
-				top - this.wh <= 100
-				&& bottom + top + this.$el.clientHeight >= 0
-			) this.lazyInit();
-		},
 
 		/**
 		 * @description ініціалізація "лінивого" звантаження
 		 */
-		lazyInit() {
-			const lazyImageObserver
+		init() {
+			this.lazyImageObserver
 				= new IntersectionObserver(entries => {
-					entries.forEach(entry => {
-						const lazyImage = entry.target;
+					if (entries[0].isIntersecting) {
+						const lazyImage = this.$el;
 						const g = this.gradient ? (this.gradient + ',') : '';
 
 						lazyImage.style.backgroundImage = g + `url(${this.$device?.isSafari ? this.images.picture : (this.images.webp || this.images.picture)})`;
-						lazyImageObserver.unobserve(lazyImage);
+						this.lazyImageObserver.unobserve(this.$el);
 						this.load = true;
-					});
+					}
+				}, {
+					threshold: 0.1
 				});
 
-			lazyImageObserver.observe(this.$el);
+			this.$nextTick(() => {
+				this.lazyImageObserver.observe(this.$el);
+			});
 		}
 	}
 };
