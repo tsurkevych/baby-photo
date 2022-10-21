@@ -71,7 +71,7 @@ export default {
 			const g = this.gradient ? (this.gradient + ',') : '';
 
 			this.style = {
-				backgroundImage: g + `url(${this.$device.isSafari ? this.images.picture : (this.images.webp || this.images.picture)})`
+				backgroundImage: g + `url(${this.$device?.isSafari ? this.images.picture : (this.images.webp || this.images.picture)})`
 			};
 			this.load = true;
 		}

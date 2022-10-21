@@ -81,16 +81,46 @@ export default {
 			}
 		}
 	},
+	data() {
+		return {
+			observe: null
+		};
+	},
+	destroyed() {
+		this.observer && this.observer.disconnect();
+	},
 	mounted() {
-		this.$swiper(this.$refs.swiper, {
-			speed:         400,
-			slidesPerView: 'auto',
-			spaceBetween:  16,
-			navigation:    {
-				nextEl: this.$refs.next,
-				prevEl: this.$refs.prev
-			}
-		});
+		this.$refs.swiper && this.init();
+	},
+	methods: {
+		/**
+		 * @description ініціалізація блоку
+		 */
+		init() {
+			this.observer = new IntersectionObserver(entries => {
+				if (entries[0].isIntersecting) {
+					this.initSlider();
+					this.observer.unobserve(this.$refs.swiper);
+				}
+			}, {
+				threshold: 0.1
+			});
+
+			this.$nextTick(() => {
+				this.observer.observe(this.$refs.swiper);
+			});
+		},
+		initSlider() {
+			this.$swiper(this.$refs.swiper, {
+				speed:         400,
+				slidesPerView: 'auto',
+				spaceBetween:  16,
+				navigation:    {
+					nextEl: this.$refs.next,
+					prevEl: this.$refs.prev
+				}
+			});
+		}
 	}
 };
 </script>
