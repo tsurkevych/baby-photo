@@ -34,12 +34,12 @@
 				v-if='item.images'
 				:class='$style.service__gallery'
 			)
-				button(
+				div(
 					ref='prev'
 					:class='[$style.gallery__arrow, $style.prev]'
 				)
 					svg-icon(name='arrow-left' :class='$style.icon')
-				button(
+				div(
 					ref='next'
 					:class='[$style.gallery__arrow, $style.next]'
 				)
@@ -298,6 +298,7 @@ export default {
 		height: 40px;
 		transition: opacity $time;
 		box-shadow: 2px 2px 5px var(--secondary);
+		cursor: pointer;
 		border: {
 			radius: 50%;
 		}
