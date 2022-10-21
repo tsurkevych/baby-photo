@@ -202,7 +202,7 @@ const config: NuxtConfig = () => {
 				name:        'tata-g',
 				author:      'tata-g',
 				theme_color: '#60382f',
-				lang:        'uk-UA',
+				lang:        'uk',
 				ogSiteName:  'baby-photo.space',
 				ogType:      'website',
 				ogTitle:     false
