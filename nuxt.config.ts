@@ -23,7 +23,7 @@ const config: NuxtConfig = () => {
 				},
 				{
 					name:    'color',
-					content: '#60382f'
+					content: '#1f321a'
 				},
 				{
 					name:    'google-site-verification',
