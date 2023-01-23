@@ -1,8 +1,11 @@
 <template lang="pug">
 	section(:class='[$style.service, $style[`service--${level}`]]')
 		header(:class='$style.service__header')
-			div(:class='$style.service__title')
-				component(:is='level === 2 ? "h4" : "h3"') {{ item.name }}
+			component(
+				:is='level === 2 ? "h4" : "h3"'
+				:class='[$style.service__title, $style[`level-${level}`]]'
+			)
+				span {{ item.name }}
 			div(
 				v-if='item.description'
 				:class='$style.service__description'
@@ -25,15 +28,15 @@
 				v-for='item in item.list'
 				:class='$style.service__item'
 			)
-				svg-icon(
+				//- svg-icon(
 					name='checked'
 					:class='$style.icon'
-				)
+					)
 				| {{ item }}
-			li(
+			//- li(
 				v-if='item.images'
 				:class='$style.service__gallery'
-			)
+				)
 				div(
 					ref='prev'
 					:class='[$style.gallery__arrow, $style.prev]'
@@ -47,7 +50,7 @@
 				.swiper(
 					:class='$style.gallery'
 					ref='swiper'
-				)
+					)
 					.swiper-wrapper
 						ui-background.swiper-slide(
 							v-for='(item, i) in item.images'
@@ -63,10 +66,10 @@
 			v-if='item.price'
 			:class='$style.service__price'
 		)
-			svg-icon(
+			//- svg-icon(
 				name='price'
 				:class='$style.icon'
-			)
+				)
 			| {{ item.price }} грн
 </template>
 
@@ -87,10 +90,10 @@ export default {
 		};
 	},
 	destroyed() {
-		this.observer && this.observer.disconnect();
+		// this.observer && this.observer.disconnect();
 	},
 	mounted() {
-		this.$refs.swiper && this.init();
+		// this.$refs.swiper && this.init();
 	},
 	methods: {
 		/**
@@ -130,24 +133,38 @@ export default {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	color: var(--black);
+
+	&:not(:first-child) {
+		@include border(top, #7f9577, 2);
+		margin: {
+			top: 32px;
+		}
+		padding: {
+			top: 32px;
+		}
+	}
 
 	// overflow: hidden;
-	border: {
+
+	/* border: {
 		radius: 4px;
 	}
 	background: {
 		color: color.scale(map.get($colors, 'main'), $lightness: 50%);
-	}
+	} */
 
 	&__header {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding: 8px 16px;
-		background: {
+
+		// padding: 8px 16px;
+
+		/* background: {
 			color: var(--main);
-		}
+		} */
 		font: {
 			size: 18px;
 			weight: 700;
@@ -156,13 +173,13 @@ export default {
 			align: center;
 		}
 
-		.icon {
+		/* .icon {
 			width: 28px;
 			height: 28px;
 			margin: {
 				bottom: 16px;
 			}
-		}
+		} */
 	}
 
 	&__title {
@@ -170,19 +187,47 @@ export default {
 		align-items: center;
 		justify-content: center;
 
-		.icon {
+		&.level-1 {
+			font: {
+				size: 24px;
+			}
+
+			@include b-up(md) {
+				font: {
+					size: 32px;
+				}
+			}
+
+			span {
+				text-decoration: underline;
+			}
+		}
+
+		&.level-2 {
+			font: {
+				size: 22px;
+			}
+
+			@include b-up(md) {
+				font: {
+					size: 24px;
+				}
+			}
+		}
+
+		/* .icon {
 			width: 16px;
 			height: 16px;
 			margin: {
 				bottom: 0;
 				left: 8px;
 			}
-		}
+		} */
 	}
 
 	&__description {
 		font: {
-			size: 13px;
+			size: 18px;
 			weight: 400;
 		}
 	}
@@ -198,7 +243,17 @@ export default {
 	}
 
 	&__item {
-		.icon {
+		font: {
+			size: 14px;
+		}
+
+		@include b-up(md) {
+			font: {
+				size: 18px;
+			}
+		}
+
+		/* .icon {
 			display: inline;
 			width: 8px;
 			min-width: 8px;
@@ -207,7 +262,7 @@ export default {
 				right: 4px;
 				bottom: 1px;
 			}
-		}
+		} */
 
 		text: {
 			align: center;
@@ -223,29 +278,32 @@ export default {
 	&__price {
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		margin: {
-			top: auto;
-		}
+		justify-content: flex-end;
 
-		padding: 8px 16px;
-		background: {
+		/* margin: {
+			top: auto;
+		} */
+
+		// padding: 8px 16px;
+
+		/* background: {
 			color: var(--main);
-		}
+		} */
 
 		font: {
-			size: 28px;
-			weight: 900;
+			size: 22px;
+
+			// weight: 700;
 		}
 
-		.icon {
+		/* .icon {
 			width: 24px;
 			min-width: 24px;
 			height: 24px;
 			margin: {
 				right: 16px;
 			}
-		}
+		} */
 	}
 
 	&__sub {
@@ -253,15 +311,15 @@ export default {
 	}
 
 	&--2 {
-		@include border(right, var(--main), 3);
-		@include border(left, var(--main), 3);
+		// @include border(right, var(--main), 3);
+		// @include border(left, var(--main), 3);
 		margin: {
 			top: 8px;
 		}
 	}
 }
 
-.gallery {
+/* .gallery {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -271,10 +329,6 @@ export default {
 		max-width: 50px;
 		height: 50px;
 		cursor: zoom-in;
-
-		/* margin: {
-			bottom: 16px;
-		} */
 		background: {
 			position: center;
 			size: cover;
@@ -323,6 +377,6 @@ export default {
 			height: 12px;
 		}
 	}
-}
+} */
 
 </style>

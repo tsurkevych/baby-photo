@@ -1,6 +1,6 @@
 <template lang="pug">
 	section#gallery(:class='$style.gallery')
-		layout-waves(:params='{color: "#f4ebea", index: 4, height: 242, revert: true }')
+		layout-waves(:params='{color: "#d9ddbb", index: 4, height: 242, revert: true }')
 		ui-container(:class='$style.container')
 			ui-headline {{ params.title }}
 			ui-row

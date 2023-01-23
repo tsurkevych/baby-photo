@@ -37,7 +37,7 @@
 		transition(name='header')
 			layout-waves(
 				v-if='wave'
-				:params='{color: "#e0cac6", index: 1, height: 120}'
+				:params='{color: "#c1c791", index: 1, height: 120}'
 			)
 </template>
 

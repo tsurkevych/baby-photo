@@ -1,6 +1,6 @@
 <template lang="pug">
 	section#about(:class='$style.faq')
-		layout-waves(:params='{color: "#f4ebea", index: 7, height: 184, revert: true }')
+		layout-waves(:params='{color: "#d9ddbb", index: 7, height: 184, revert: true }')
 		ui-container(:class='$style.container')
 			ui-headline {{ params.title }}
 			ui-row(:class='$style.row')

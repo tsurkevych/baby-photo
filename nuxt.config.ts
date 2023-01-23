@@ -200,7 +200,7 @@ const config: NuxtConfig = () => {
 				favicon:     true,
 				name:        'tata-g',
 				author:      'tata-g',
-				theme_color: '#60382f',
+				theme_color: '#1f321a',
 				lang:        'uk',
 				ogSiteName:  'baby-photo.space',
 				ogType:      'website',
