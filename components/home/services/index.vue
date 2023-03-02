@@ -7,13 +7,7 @@
 				ui-grid(:md='4')
 				ui-grid(:xs='8' :md='4')
 					div(:class='$style.services__sticky')
-						ui-image(
-							:images='{\
-								picture: require("@/assets/images/1.png")\
-							}'
-							alt="price"
-							title="price"
-						)
+						img(src="@/assets/images/1.png", alt="alt")
 				ui-grid(:xs='16' :md='10')
 					div(:class='$style.services__main')
 						div(v-for='(item, index) in params.items')
