@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+  <head {{ HEAD_ATTRS }}>
+    {{ HEAD.replace(new RegExp('<link rel="modulepreload" href="/_nuxt/([a-f0-9]{7})\\.modern\\.js" as="script">', 'g'), '') }}
+  </script>
+  </head>
+  <body {{ BODY_ATTRS }}>
+    {{ APP.replace(new RegExp('script type="module" src="/_nuxt/([a-f0-9]{7})\\.modern\\.js"', 'g'), 'script type="module" lazy-src="/_nuxt/$1.modern.js"').replace(new RegExp('script nomodule src="/_nuxt/([a-f0-9]{7})\\.js"', 'g'), 'script nomodule lazy-src="/_nuxt/.js"') }}
+    <script type="text/javascript">
+			const lazyLoadTimeout = 5000; // the arbitrary delay in ms
+      const userInteractionEvents = ["mouseover", "keydown", "touchstart", "touchmove", "wheel"];
+      const loadScriptsTimer = setTimeout(loadScripts, lazyLoadTimeout);
+      function loadScripts() {
+        window.loadGtmScript && loadGtmScript();
+        Array.from(document.querySelectorAll("script[lazy-src]")).forEach(function(elem) {
+          elem.setAttribute("src", elem.getAttribute("lazy-src"));
+          elem.removeAttribute("lazy-src");
+        })
+      }
+			
+			userInteractionEvents.forEach(function(event) {
+        window.addEventListener(event, triggerScriptLoader, { passive: true}) 
+      });
+      function triggerScriptLoader() {
+        loadScripts();
+        clearTimeout(loadScriptsTimer);
+        userInteractionEvents.forEach(function(event) {
+          window.removeEventListener(event, triggerScriptLoader, { passive: true })
+        })
+      }
+    </script>
+  </body>
+</html>

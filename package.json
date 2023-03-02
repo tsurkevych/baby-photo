@@ -12,7 +12,7 @@
 		"dev": "nuxt --open",
 		"build": " npm run lint && nuxt build --modern=server",
 		"start": "nuxt start",
-		"generate": "npm run lint && nuxt generate",
+		"generate": "npm run lint && nuxt generate --modern=server",
 		"lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .eslintignore .",
 		"lint:style": "stylelint \"**/*.{scss,vue}\" --ignore-path .stylelintignore",
 		"lint": "npm run lint:js && npm run lint:style",

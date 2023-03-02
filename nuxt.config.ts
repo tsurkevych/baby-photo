@@ -78,11 +78,13 @@ const config: NuxtConfig = () => {
 					async: true
 				},
 				process.env.NODE_ENV === 'production' && {
-					innerHTML: `window.dataLayer = window.dataLayer || [];
-					function gtag(){dataLayer.push(arguments);}
-					gtag('js', new Date());
-				  
-					gtag('config', 'G-DJBYERN53T');`
+					innerHTML: `const loadGtmScript = () => {
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+					
+						gtag('config', 'G-DJBYERN53T');
+					}`
 				},
 				{
 					innerHTML: JSON.stringify({
