@@ -36,7 +36,13 @@
 								div 1000
 									span грн/год
 						div(:class='$style.prices__description')
-							img(src="@/assets/images/1.png", alt="alt")
+							ui-image(
+								:images='{\
+									picture: require("@/assets/images/1.png")\
+								}'
+								alt="price"
+								title="price"
+							)
 							span 100+ ФОТО В КОЛЬОРО ТА СВІТЛОКОРЕКЦІЇ. <br>  ПЕРЕДАЧА МАТЕРІАЛУ ЧЕРЕЗ ФАЙЛООБМІННИК. <br> ТЕРМІН ГОТОВНОСТІ ФОТО 2 ТИЖНІ.
 </template>
 
