@@ -9,12 +9,13 @@
 					:class='$style.header__logo'
 					@click='scrollTo'
 				)
-			transition(name='header')
-				layout-menu(
-					v-show='((ww && (ww >= $size.md)) || open) && $route.path === "/"'
-					:class='$style.header__menu'
-					@click='setOpen(false)'
-				)
+			client-only
+				transition(name='header')
+					layout-menu(
+						v-show='((ww >= $size.md) || open) && $route.path === "/"'
+						:class='$style.header__menu'
+						@click='setOpen(false)'
+					)
 			a(
 				:class='$style.phone'
 				href='tel:+380682029597'
