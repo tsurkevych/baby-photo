@@ -11,7 +11,7 @@
 				)
 			transition(name='header')
 				layout-menu(
-					v-show='(ww === 0 || (ww >= $size.md) || open) && $route.path === "/"'
+					v-show='((ww && (ww >= $size.md)) || open) && $route.path === "/"'
 					:class='$style.header__menu'
 					@click='setOpen(false)'
 				)
