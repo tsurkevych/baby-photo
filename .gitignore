@@ -87,4 +87,4 @@ static/sw.*
 *.swp
 
 # api
-plugins/api
+plugins
